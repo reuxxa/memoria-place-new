@@ -97,14 +97,14 @@ export default function Kamar({ params }) {
       {/* Header Banner Kamar */}
       <header className="room-header-section text-center relative">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="btn-outline-gold absolute top-4 left-4 text-xs py-1.5 px-3 no-underline hidden md:inline-block text-white"
           >
             <i className="bi bi-arrow-left mr-1"></i> Kembali ke Lobi
           </Link>
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="btn-outline-gold text-xs py-1.5 px-3 mb-3 inline-block md:hidden text-white no-underline"
           >
             <i className="bi bi-arrow-left mr-1"></i> Kembali ke Lobi
@@ -137,8 +137,8 @@ export default function Kamar({ params }) {
           <>
             {isMyAngkatan ? (
               <div className="text-center my-6">
-                <Link 
-                  href={`/tulis?angkatan=${angkatan}`} 
+                <Link
+                  href={`/tulis?angkatan=${angkatan}`}
                   className="btn-gold py-3.5 px-8 shadow-lg text-lg flex items-center gap-2 justify-center max-w-xs mx-auto no-underline rounded-xl"
                 >
                   <i className="bi bi-pencil-square"></i>
@@ -151,8 +151,8 @@ export default function Kamar({ params }) {
                 <div>
                   <h6 className="font-bold text-blue-900 text-sm">Mode Baca Arsip Aktif</h6>
                   <p className="text-blue-700 text-xs mt-1">
-                    Anda masuk sebagai <strong>{currentUser.username} (Angkatan {currentUser.angkatan})</strong>. 
-                    Anda hanya diperbolehkan menulis pesan di kamar angkatan Anda sendiri.
+                    Anda masuk sebagai <strong>{currentUser.username} (Angkatan {currentUser.angkatan})</strong>.
+                    Anda hanya diperbolehkan menulis pesan di ruang memori angkatan sendiri.
                   </p>
                 </div>
               </div>
@@ -176,7 +176,7 @@ export default function Kamar({ params }) {
             <i className="bi bi-envelope-open-fill empty-state-icon text-slate-300 text-5xl mb-3 block"></i>
             <h4 className="empty-state-title text-lg font-bold text-slate-800">Ruang Memori Masih Kosong</h4>
             <p className="text-slate-500 text-xs mt-2">
-              Belum ada kenangan yang diunggah di kamar angkatan ini.{' '}
+              Belum ada kenangan yang diunggah di ruang memori angkatan ini.{' '}
               {isMyAngkatan && 'Jadilah orang pertama yang mengisinya!'}
             </p>
             {isMyAngkatan && (
@@ -188,12 +188,12 @@ export default function Kamar({ params }) {
         ) : (
           <div className="message-grid mt-6">
             {messages.map((msg, index) => (
-              <div 
-                key={msg.id} 
+              <div
+                key={msg.id}
                 className="polaroid-card animate-fade-in"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div 
+                <div
                   className="polaroid-content"
                   dangerouslySetInnerHTML={{ __html: escapeHTML(msg.text) }}
                 />

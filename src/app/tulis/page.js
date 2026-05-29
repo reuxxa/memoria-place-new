@@ -7,7 +7,7 @@ import Link from 'next/link';
 function TulisContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  
+
   const [angkatan, setAngkatan] = useState('');
   const [currentUser, setCurrentUser] = useState(null);
   const [token, setToken] = useState('');
@@ -67,9 +67,9 @@ function TulisContent() {
       const data = await res.json();
 
       if (res.ok && data.status === 'success') {
-        setAlert({ 
-          type: 'success', 
-          message: 'Pesan Anda berhasil disimpan! Mengalihkan kembali ke Kamar Angkatan...' 
+        setAlert({
+          type: 'success',
+          message: 'Pesan Anda berhasil disimpan! Mengalihkan kembali ke Kamar Angkatan...'
         });
         setText('');
 
@@ -92,17 +92,17 @@ function TulisContent() {
       {/* Header Banner */}
       <header className="room-header-section text-center relative">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <Link 
-            href={angkatan ? `/kamar/${angkatan}` : '/'} 
+          <Link
+            href={angkatan ? `/kamar/${angkatan}` : '/'}
             className="btn-outline-gold absolute top-4 left-4 text-xs py-1.5 px-3 no-underline hidden md:inline-block text-white"
           >
-            <i className="bi bi-arrow-left mr-1"></i> Kembali ke Kamar
+            <i className="bi bi-arrow-left mr-1"></i> Kembali ke Ruang Memori
           </Link>
-          <Link 
-            href={angkatan ? `/kamar/${angkatan}` : '/'} 
+          <Link
+            href={angkatan ? `/kamar/${angkatan}` : '/'}
             className="btn-outline-gold text-xs py-1.5 px-3 mb-3 inline-block md:hidden text-white no-underline"
           >
-            <i className="bi bi-arrow-left mr-1"></i> Kembali ke Kamar
+            <i className="bi bi-arrow-left mr-1"></i> Kembali ke Ruang Memori
           </Link>
 
           <div>
@@ -119,22 +119,20 @@ function TulisContent() {
       <section className="max-w-4xl mx-auto px-4 py-10">
         {/* System Alert Banner */}
         {alert && (
-          <div 
-            className={`p-3 rounded-lg flex items-center mb-6 text-sm font-semibold ${
-              alert.type === 'success' 
-                ? 'bg-green-50 border border-green-200 text-green-800' 
-                : alert.type === 'warning' 
-                  ? 'bg-yellow-50 border border-yellow-200 text-yellow-800' 
-                  : 'bg-red-50 border border-red-200 text-red-800'
-            }`}
+          <div
+            className={`p-3 rounded-lg flex items-center mb-6 text-sm font-semibold ${alert.type === 'success'
+              ? 'bg-green-50 border border-green-200 text-green-800'
+              : alert.type === 'warning'
+                ? 'bg-yellow-50 border border-yellow-200 text-yellow-800'
+                : 'bg-red-50 border border-red-200 text-red-800'
+              }`}
           >
-            <i className={`bi mr-2 text-base ${
-              alert.type === 'success' 
-                ? 'bi-check-circle-fill text-green-500' 
-                : alert.type === 'warning' 
-                  ? 'bi-exclamation-circle-fill text-yellow-500' 
-                  : 'bi-x-circle-fill text-red-500'
-            }`}></i>
+            <i className={`bi mr-2 text-base ${alert.type === 'success'
+              ? 'bi-check-circle-fill text-green-500'
+              : alert.type === 'warning'
+                ? 'bi-exclamation-circle-fill text-yellow-500'
+                : 'bi-x-circle-fill text-red-500'
+              }`}></i>
             <div>{alert.message}</div>
           </div>
         )}
@@ -149,9 +147,9 @@ function TulisContent() {
           <form onSubmit={handleSubmit}>
             <div className="mb-6">
               <label htmlFor="message-text" className="form-label-custom">Pesan & Kesan Anda</label>
-              <textarea 
-                className="form-control-custom" 
-                id="message-text" 
+              <textarea
+                className="form-control-custom"
+                id="message-text"
                 rows="6"
                 placeholder="Tulis apa saja... hal lucu di sekolah, harapan untuk 5-10 tahun ke depan, atau salam perpisahan terhangat..."
                 value={text}
@@ -169,8 +167,8 @@ function TulisContent() {
                   Menulis sebagai: <strong className="text-slate-900 font-semibold">@{currentUser.username} (Angkatan {currentUser.angkatan})</strong>
                 </span>
               )}
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 disabled={loading}
                 className="btn-gold py-2.5 px-6 shadow-md rounded-lg flex items-center gap-2"
               >
