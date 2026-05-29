@@ -183,7 +183,7 @@ export default function Docs() {
       },
       '/messages/{angkatan}': {
         get: {
-          summary: 'Ambil Pesan Kamar Angkatan',
+          summary: 'Ambil Pesan Ruang Angkatan',
           description: 'Mengambil daftar pesan memori dari satu angkatan tertentu (Memerlukan Otorisasi Bearer Token).',
           security: [{ BearerAuth: [] }],
           parameters: [
@@ -279,7 +279,7 @@ export default function Docs() {
               description: 'Unauthenticated',
             },
             403: {
-              description: 'Forbidden (Mencoba mengirim pesan ke kamar angkatan lain)',
+              description: 'Forbidden (Mencoba mengirim pesan ke ruang memori angkatan lain)',
             },
           },
         },

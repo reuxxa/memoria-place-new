@@ -128,7 +128,7 @@ export default function Home() {
             Ruang Memori Angkatan
           </h2>
           <p className="text-slate-500 mt-2 text-sm md:text-base">
-            Pilih kamar angkatan untuk membaca arsip kenangan alumni.
+            Pilih ruang angkatan untuk membaca arsip kenangan alumni.
           </p>
         </div>
 
@@ -157,7 +157,7 @@ export default function Home() {
             {loading ? (
               <div className="flex flex-col items-center justify-center py-12 text-slate-500">
                 <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-yellow-500 mb-3"></div>
-                <p className="text-sm font-semibold">Mengambil data kamar angkatan...</p>
+                <p className="text-sm font-semibold">Mengambil data ruang memori angkatan...</p>
               </div>
             ) : error ? (
               <div className="max-w-md mx-auto text-center p-6 bg-red-50 border border-red-100 rounded-xl my-6">

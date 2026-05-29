@@ -37,7 +37,7 @@ export async function POST(request) {
     // Pastikan user hanya menulis di angkatannya sendiri
     if (user.angkatan.toString() !== angkatan.toString()) {
       return NextResponse.json(
-        { status: 'error', message: 'Anda hanya dapat menulis pesan di kamar angkatan Anda sendiri!' },
+        { status: 'error', message: 'Anda hanya dapat menulis pesan di ruang memori angkatan Anda sendiri!' },
         { status: 403 }
       );
     }

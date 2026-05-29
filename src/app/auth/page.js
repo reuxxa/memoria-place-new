@@ -306,7 +306,7 @@ function AuthContent() {
                     required
                   />
                   <div className="text-[10px] text-red-500 font-semibold mt-1">
-                    Peringatan: Pilihan angkatan ini permanen dan menentukan kamar mana yang bisa Anda kirimi pesan!
+                    Peringatan: Pilihan angkatan ini permanen dan menentukan ruang memori mana yang bisa Anda kirimi pesan!
                   </div>
                 </div>
                 <button 

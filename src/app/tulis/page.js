@@ -69,7 +69,7 @@ function TulisContent() {
       if (res.ok && data.status === 'success') {
         setAlert({
           type: 'success',
-          message: 'Pesan Anda berhasil disimpan! Mengalihkan kembali ke Kamar Angkatan...'
+          message: 'Pesan Anda berhasil disimpan! Mengalihkan kembali ke Ruang Memori Angkatan...'
         });
         setText('');
 
